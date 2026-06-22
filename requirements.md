@@ -2,6 +2,28 @@ IC4 Virtual Cycling Companion
 
 Product Roadmap & Agile Tracker
 
+Current Implementation Status
+
+Completed initial app setup:
+
+* Created an iOS SwiftUI Xcode project scaffold.
+* Added native app structure for App, Models, Services, Bluetooth, RideSession, Routes, Views, Components, and Utilities.
+* Built a placeholder app shell with Ride, Courses, and Settings tabs.
+* Added a mock ride dashboard with current power, average power, cadence, speed, elapsed time, distance, and target resistance.
+* Added a mock ride session that updates fake telemetry over time.
+* Added a placeholder IC4 Bluetooth service/protocol for future BLE integration.
+* Added mock route models with coordinates, elevation samples, and resistance cues.
+* Added a MapKit route display using bundled mock coordinates.
+* Added project README with setup, architecture, limitations, and next tasks.
+
+Not yet implemented:
+
+* IC4 BLE scanning, connection, or telemetry decoding.
+* HealthKit integration.
+* Strava integration or export.
+* Local ride persistence.
+* Real Apple Maps route generation.
+
 Vision
 
 Build a native iOS application that transforms a Schwinn IC4 indoor bike into a virtual outdoor riding experience.

@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		100000000000000000000101 /* vBikeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000201 /* vBikeApp.swift */; };
+		100000000000000000000102 /* AppTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000202 /* AppTab.swift */; };
+		100000000000000000000103 /* RideTelemetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000203 /* RideTelemetry.swift */; };
+		100000000000000000000104 /* CyclingRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000204 /* CyclingRoute.swift */; };
+		100000000000000000000105 /* TelemetryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000205 /* TelemetryProvider.swift */; };
+		100000000000000000000106 /* MockTelemetryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000206 /* MockTelemetryProvider.swift */; };
+		100000000000000000000107 /* BikeConnectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000207 /* BikeConnectionState.swift */; };
+		100000000000000000000108 /* IC4BluetoothService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000208 /* IC4BluetoothService.swift */; };
+		100000000000000000000109 /* RideSessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000209 /* RideSessionState.swift */; };
+		10000000000000000000010A /* MockRideSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000020A /* MockRideSession.swift */; };
+		10000000000000000000010B /* RouteProgressEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000020B /* RouteProgressEngine.swift */; };
+		10000000000000000000010C /* MockRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000020C /* MockRoutes.swift */; };
+		10000000000000000000010D /* MetricTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000020D /* MetricTile.swift */; };
+		10000000000000000000010E /* ResistanceCueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000020E /* ResistanceCueView.swift */; };
+		10000000000000000000010F /* MetricFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000020F /* MetricFormatters.swift */; };
+		100000000000000000000110 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000210 /* RootView.swift */; };
+		100000000000000000000111 /* RideDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000211 /* RideDashboardView.swift */; };
+		100000000000000000000112 /* CourseSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000212 /* CourseSelectionView.swift */; };
+		100000000000000000000113 /* RouteMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000213 /* RouteMapView.swift */; };
+		100000000000000000000114 /* SettingsDebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000214 /* SettingsDebugView.swift */; };
+		100000000000000000000115 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000215 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		100000000000000000000001 /* vBike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vBike.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		100000000000000000000201 /* vBikeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vBikeApp.swift; sourceTree = "<group>"; };
+		100000000000000000000202 /* AppTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTab.swift; sourceTree = "<group>"; };
+		100000000000000000000203 /* RideTelemetry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideTelemetry.swift; sourceTree = "<group>"; };
+		100000000000000000000204 /* CyclingRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyclingRoute.swift; sourceTree = "<group>"; };
+		100000000000000000000205 /* TelemetryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelemetryProvider.swift; sourceTree = "<group>"; };
+		100000000000000000000206 /* MockTelemetryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTelemetryProvider.swift; sourceTree = "<group>"; };
+		100000000000000000000207 /* BikeConnectionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeConnectionState.swift; sourceTree = "<group>"; };
+		100000000000000000000208 /* IC4BluetoothService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IC4BluetoothService.swift; sourceTree = "<group>"; };
+		100000000000000000000209 /* RideSessionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideSessionState.swift; sourceTree = "<group>"; };
+		10000000000000000000020A /* MockRideSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRideSession.swift; sourceTree = "<group>"; };
+		10000000000000000000020B /* RouteProgressEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteProgressEngine.swift; sourceTree = "<group>"; };
+		10000000000000000000020C /* MockRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRoutes.swift; sourceTree = "<group>"; };
+		10000000000000000000020D /* MetricTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricTile.swift; sourceTree = "<group>"; };
+		10000000000000000000020E /* ResistanceCueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistanceCueView.swift; sourceTree = "<group>"; };
+		10000000000000000000020F /* MetricFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricFormatters.swift; sourceTree = "<group>"; };
+		100000000000000000000210 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		100000000000000000000211 /* RideDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideDashboardView.swift; sourceTree = "<group>"; };
+		100000000000000000000212 /* CourseSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseSelectionView.swift; sourceTree = "<group>"; };
+		100000000000000000000213 /* RouteMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteMapView.swift; sourceTree = "<group>"; };
+		100000000000000000000214 /* SettingsDebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDebugView.swift; sourceTree = "<group>"; };
+		100000000000000000000215 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		100000000000000000000216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		100000000000000000000301 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		100000000000000000000401 = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000402 /* vBike */,
+				100000000000000000000403 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		100000000000000000000402 /* vBike */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000404 /* App */,
+				100000000000000000000405 /* Models */,
+				100000000000000000000406 /* Services */,
+				100000000000000000000407 /* Bluetooth */,
+				100000000000000000000408 /* RideSession */,
+				100000000000000000000409 /* Routes */,
+				10000000000000000000040A /* Views */,
+				10000000000000000000040B /* Components */,
+				10000000000000000000040C /* Utilities */,
+				10000000000000000000040D /* Resources */,
+			);
+			path = vBike;
+			sourceTree = "<group>";
+		};
+		100000000000000000000403 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000001 /* vBike.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		100000000000000000000404 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000201 /* vBikeApp.swift */,
+				100000000000000000000202 /* AppTab.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		100000000000000000000405 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000203 /* RideTelemetry.swift */,
+				100000000000000000000204 /* CyclingRoute.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		100000000000000000000406 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000205 /* TelemetryProvider.swift */,
+				100000000000000000000206 /* MockTelemetryProvider.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		100000000000000000000407 /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000207 /* BikeConnectionState.swift */,
+				100000000000000000000208 /* IC4BluetoothService.swift */,
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
+		100000000000000000000408 /* RideSession */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000209 /* RideSessionState.swift */,
+				10000000000000000000020A /* MockRideSession.swift */,
+			);
+			path = RideSession;
+			sourceTree = "<group>";
+		};
+		100000000000000000000409 /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				10000000000000000000020B /* RouteProgressEngine.swift */,
+				10000000000000000000020C /* MockRoutes.swift */,
+			);
+			path = Routes;
+			sourceTree = "<group>";
+		};
+		10000000000000000000040A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000210 /* RootView.swift */,
+				100000000000000000000211 /* RideDashboardView.swift */,
+				100000000000000000000212 /* CourseSelectionView.swift */,
+				100000000000000000000213 /* RouteMapView.swift */,
+				100000000000000000000214 /* SettingsDebugView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		10000000000000000000040B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				10000000000000000000020D /* MetricTile.swift */,
+				10000000000000000000020E /* ResistanceCueView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		10000000000000000000040C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				10000000000000000000020F /* MetricFormatters.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		10000000000000000000040D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000215 /* Assets.xcassets */,
+				100000000000000000000216 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		100000000000000000000501 /* vBike */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 100000000000000000000601 /* Build configuration list for PBXNativeTarget "vBike" */;
+			buildPhases = (
+				100000000000000000000701 /* Sources */,
+				100000000000000000000301 /* Frameworks */,
+				100000000000000000000702 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = vBike;
+			productName = vBike;
+			productReference = 100000000000000000000001 /* vBike.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		100000000000000000000801 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					100000000000000000000501 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = 100000000000000000000602 /* Build configuration list for PBXProject "vBike" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 100000000000000000000401;
+			productRefGroup = 100000000000000000000403 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				100000000000000000000501 /* vBike */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		100000000000000000000702 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				100000000000000000000115 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		100000000000000000000701 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				100000000000000000000101 /* vBikeApp.swift in Sources */,
+				100000000000000000000102 /* AppTab.swift in Sources */,
+				100000000000000000000103 /* RideTelemetry.swift in Sources */,
+				100000000000000000000104 /* CyclingRoute.swift in Sources */,
+				100000000000000000000105 /* TelemetryProvider.swift in Sources */,
+				100000000000000000000106 /* MockTelemetryProvider.swift in Sources */,
+				100000000000000000000107 /* BikeConnectionState.swift in Sources */,
+				100000000000000000000108 /* IC4BluetoothService.swift in Sources */,
+				100000000000000000000109 /* RideSessionState.swift in Sources */,
+				10000000000000000000010A /* MockRideSession.swift in Sources */,
+				10000000000000000000010B /* RouteProgressEngine.swift in Sources */,
+				10000000000000000000010C /* MockRoutes.swift in Sources */,
+				10000000000000000000010D /* MetricTile.swift in Sources */,
+				10000000000000000000010E /* ResistanceCueView.swift in Sources */,
+				10000000000000000000010F /* MetricFormatters.swift in Sources */,
+				100000000000000000000110 /* RootView.swift in Sources */,
+				100000000000000000000111 /* RideDashboardView.swift in Sources */,
+				100000000000000000000112 /* CourseSelectionView.swift in Sources */,
+				100000000000000000000113 /* RouteMapView.swift in Sources */,
+				100000000000000000000114 /* SettingsDebugView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		100000000000000000000901 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		100000000000000000000902 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		100000000000000000000903 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = vBike/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevin.vBike;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		100000000000000000000904 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = vBike/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevin.vBike;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		100000000000000000000601 /* Build configuration list for PBXNativeTarget "vBike" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				100000000000000000000903 /* Debug */,
+				100000000000000000000904 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		100000000000000000000602 /* Build configuration list for PBXProject "vBike" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				100000000000000000000901 /* Debug */,
+				100000000000000000000902 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 100000000000000000000801 /* Project object */;
+}
