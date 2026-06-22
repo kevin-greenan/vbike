@@ -19,12 +19,15 @@ Completed initial app setup:
 * Added a MapKit route display using bundled mock coordinates and simulated rider progress.
 * Added lightweight local ride-history persistence for completed mock rides.
 * Added an XCTest target covering route progress math and mock ride session state transitions.
+* Added a CoreBluetooth scanner shell with debug UI for discovered peripherals.
+* Added preliminary IC4 BLE detection heuristics and Bluetooth integration notes.
 * Added project README with setup, architecture, limitations, and next tasks.
 * Added git ignores for local Xcode build and user metadata.
 
 Not yet implemented:
 
-* IC4 BLE scanning, connection, or telemetry decoding.
+* IC4 BLE telemetry decoding.
+* Known-bike persistence and auto-reconnect.
 * HealthKit integration and true calorie/energy recording.
 * Strava integration or export.
 * Real Apple Maps route generation.

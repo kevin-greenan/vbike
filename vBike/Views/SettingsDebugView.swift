@@ -2,14 +2,70 @@ import SwiftUI
 
 struct SettingsDebugView: View {
   @EnvironmentObject private var rideSession: MockRideSession
-  private let bluetoothState: BikeConnectionState = .disconnected
+  @StateObject private var bluetoothService = IC4BluetoothService()
 
   var body: some View {
     List {
       Section("Bike") {
         LabeledContent("Connection", value: connectionLabel)
+        LabeledContent("Scanner", value: bluetoothService.scanStatus.displayText)
         LabeledContent("Target hardware", value: "Schwinn IC4")
         LabeledContent("Telemetry source", value: "Mock")
+
+        HStack {
+          Button {
+            bluetoothService.startScanning()
+          } label: {
+            Label("Scan", systemImage: "antenna.radiowaves.left.and.right")
+          }
+          .disabled(bluetoothService.scanStatus == .scanning)
+
+          Spacer()
+
+          Button {
+            bluetoothService.stopScanning()
+          } label: {
+            Label("Stop", systemImage: "stop.fill")
+          }
+          .disabled(bluetoothService.scanStatus != .scanning)
+        }
+      }
+
+      if !bluetoothService.discoveredDevices.isEmpty {
+        Section("Discovered Devices") {
+          ForEach(bluetoothService.discoveredDevices) { device in
+            Button {
+              bluetoothService.connect(to: device)
+            } label: {
+              HStack(spacing: 12) {
+                Image(
+                  systemName: device.isLikelyIC4
+                    ? "bicycle.circle.fill" : "dot.radiowaves.left.and.right"
+                )
+                .font(.title3)
+                .foregroundStyle(device.isLikelyIC4 ? .green : .secondary)
+
+                VStack(alignment: .leading, spacing: 4) {
+                  Text(device.name)
+                    .font(.headline)
+                    .foregroundStyle(.primary)
+                  Text(
+                    device.isLikelyIC4
+                      ? "Likely Schwinn IC4 or cycling sensor" : "Bluetooth peripheral"
+                  )
+                  .font(.caption)
+                  .foregroundStyle(.secondary)
+                }
+
+                Spacer()
+
+                Text("\(device.rssi) dBm")
+                  .font(.caption.monospacedDigit())
+                  .foregroundStyle(.secondary)
+              }
+            }
+          }
+        }
       }
 
       Section("Ride Session") {
@@ -53,7 +109,7 @@ struct SettingsDebugView: View {
   }
 
   private var connectionLabel: String {
-    switch bluetoothState {
+    switch bluetoothService.connectionState {
     case .disconnected:
       return "Disconnected"
     case .scanning:

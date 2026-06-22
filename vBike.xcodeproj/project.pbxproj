@@ -36,6 +36,10 @@
 		10000000000000000000011B /* RideHistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000021C /* RideHistoryStore.swift */; };
 		10000000000000000000011C /* RouteProgressEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000021D /* RouteProgressEngineTests.swift */; };
 		10000000000000000000011D /* MockRideSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000021E /* MockRideSessionTests.swift */; };
+		10000000000000000000011E /* BluetoothDiscoveredDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000021F /* BluetoothDiscoveredDevice.swift */; };
+		10000000000000000000011F /* BluetoothScanStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000220 /* BluetoothScanStatus.swift */; };
+		100000000000000000000120 /* BluetoothScannerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000221 /* BluetoothScannerState.swift */; };
+		100000000000000000000121 /* BluetoothScannerStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000222 /* BluetoothScannerStateTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +85,10 @@
 		10000000000000000000021C /* RideHistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideHistoryStore.swift; sourceTree = "<group>"; };
 		10000000000000000000021D /* RouteProgressEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteProgressEngineTests.swift; sourceTree = "<group>"; };
 		10000000000000000000021E /* MockRideSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRideSessionTests.swift; sourceTree = "<group>"; };
+		10000000000000000000021F /* BluetoothDiscoveredDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothDiscoveredDevice.swift; sourceTree = "<group>"; };
+		100000000000000000000220 /* BluetoothScanStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothScanStatus.swift; sourceTree = "<group>"; };
+		100000000000000000000221 /* BluetoothScannerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothScannerState.swift; sourceTree = "<group>"; };
+		100000000000000000000222 /* BluetoothScannerStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothScannerStateTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +179,9 @@
 			children = (
 				100000000000000000000207 /* BikeConnectionState.swift */,
 				100000000000000000000208 /* IC4BluetoothService.swift */,
+				10000000000000000000021F /* BluetoothDiscoveredDevice.swift */,
+				100000000000000000000220 /* BluetoothScanStatus.swift */,
+				100000000000000000000221 /* BluetoothScannerState.swift */,
 			);
 			path = Bluetooth;
 			sourceTree = "<group>";
@@ -239,6 +250,7 @@
 			children = (
 				10000000000000000000021D /* RouteProgressEngineTests.swift */,
 				10000000000000000000021E /* MockRideSessionTests.swift */,
+				100000000000000000000222 /* BluetoothScannerStateTests.swift */,
 			);
 			path = vBikeTests;
 			sourceTree = "<group>";
@@ -368,6 +380,9 @@
 				100000000000000000000119 /* RideSummaryView.swift in Sources */,
 				10000000000000000000011A /* RouteProgressPanel.swift in Sources */,
 				10000000000000000000011B /* RideHistoryStore.swift in Sources */,
+				10000000000000000000011E /* BluetoothDiscoveredDevice.swift in Sources */,
+				10000000000000000000011F /* BluetoothScanStatus.swift in Sources */,
+				100000000000000000000120 /* BluetoothScannerState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +392,7 @@
 			files = (
 				10000000000000000000011C /* RouteProgressEngineTests.swift in Sources */,
 				10000000000000000000011D /* MockRideSessionTests.swift in Sources */,
+				100000000000000000000121 /* BluetoothScannerStateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
