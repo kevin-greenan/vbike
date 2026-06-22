@@ -38,7 +38,7 @@ Using `/tmp/vbike-deriveddata` avoids file-provider metadata issues that can aff
 - `Bluetooth`: IC4-specific CoreBluetooth scanner shell, discovered-device model, known-bike storage, reconnect controls, and clean BLE-facing protocol boundaries.
 - `RideSession`: Ride state, controls, completion summary, and mock session orchestration.
 - `Routes`: Bundled mock routes, featured course library, route progress calculations, rider position, and ETA.
-- `Views`: Root, dashboard, course selection, ride history, map, and settings/debug screens.
+- `Views`: Root, dashboard, course selection, ride history and detail, map, and settings/debug screens.
 - `Components`: Reusable SwiftUI controls for metrics, ride controls, route progress, summaries, and resistance cues.
 - `Utilities`: Formatting helpers for elapsed time, decimal values, progress, and optional ETA values.
 
@@ -59,5 +59,5 @@ Using `/tmp/vbike-deriveddata` avoids file-provider metadata issues that can aff
 1. Test Bluetooth scan results against a real Schwinn IC4 and capture advertised services.
 2. Document discovered IC4 characteristics and sample payloads in `Docs/IC4Bluetooth.md`.
 3. Validate known-bike reconnect behavior against the real IC4 after a successful scan/connect.
-4. Add ride detail drill-down for completed workouts.
+4. Use real IC4 scan results to narrow service filtering and connection handling.
 5. Replace mock route coordinates with a MapKit route creation flow.

@@ -31,6 +31,20 @@ These are intentionally broad until tested against a real bike.
 - Capture sample characteristic payloads from real rides before implementing decoding.
 - Validate whether CoreBluetooth peripheral UUID reconnect is stable for the IC4 across app launches and phone restarts.
 
+## Bike Test Checklist
+
+Use this checklist when testing against the physical Schwinn IC4:
+
+- Confirm Bluetooth permission prompt appears and scanning starts from Settings.
+- Record the displayed peripheral name and RSSI.
+- Record whether the peripheral is marked as likely IC4.
+- Capture advertised service UUIDs if Xcode console logging or a BLE utility is available.
+- Tap the discovered bike and confirm the connection state changes to connected or an actionable error.
+- Close and relaunch the app, then confirm the saved known-bike name appears.
+- Try Reconnect and record whether CoreBluetooth retrieves the saved peripheral UUID.
+- Power-cycle the bike and repeat Reconnect to see whether the UUID remains stable.
+- Note any timeout, permission, or connection-failure messages exactly as displayed.
+
 ## Non-Goals For This Stage
 
 - No HealthKit write support.

@@ -15,7 +15,16 @@ struct RideHistoryView: View {
       } else {
         Section("Completed Rides") {
           ForEach(rideSession.rideHistory) { summary in
-            RideHistoryRow(summary: summary)
+            NavigationLink {
+              RideHistoryDetailView(
+                summary: summary,
+                route: rideSession.courseLibrary.featuredRoutes.first {
+                  $0.name == summary.routeName
+                }
+              )
+            } label: {
+              RideHistoryRow(summary: summary)
+            }
           }
         }
       }
