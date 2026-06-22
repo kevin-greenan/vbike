@@ -2,6 +2,39 @@ IC4 Virtual Cycling Companion
 
 Product Roadmap & Agile Tracker
 
+Current Implementation Status
+
+Completed initial app setup:
+
+* Created an iOS SwiftUI Xcode project scaffold.
+* Added native app structure for App, Models, Services, Bluetooth, RideSession, Routes, Views, Components, and Utilities.
+* Built a placeholder app shell with Ride, Courses, and Settings tabs.
+* Added a mock ride dashboard with current power, average power, cadence, speed, elapsed time, distance, target resistance, and estimated calories.
+* Added a mock ride session that updates fake telemetry over time.
+* Added workout start, pause, resume, stop, and completed-summary UI states for mock rides.
+* Added a dedicated History tab for completed ride summaries with local clear-history support.
+* Added ride-history detail drill-down with saved metrics and mock route map context.
+* Added a placeholder IC4 Bluetooth service/protocol for future BLE integration.
+* Added mock route models with coordinates, elevation samples, and resistance cues.
+* Added route progress calculation with rider position, remaining distance, completion percentage, and ETA.
+* Added a bundled course library abstraction with featured mock courses.
+* Added a MapKit route display using bundled mock coordinates and simulated rider progress.
+* Added lightweight local ride-history persistence for completed mock rides.
+* Added an XCTest target covering route progress math and mock ride session state transitions.
+* Added a CoreBluetooth scanner shell with debug UI for discovered peripherals.
+* Added preliminary IC4 BLE detection heuristics and Bluetooth integration notes.
+* Added known-bike persistence, reconnect, and forget actions for future IC4 pairing flows.
+* Added project README with setup, architecture, limitations, and next tasks.
+* Added git ignores for local Xcode build and user metadata.
+
+Not yet implemented:
+
+* IC4 BLE telemetry decoding.
+* HealthKit integration and true calorie/energy recording.
+* Strava integration or export.
+* Real Apple Maps route generation.
+* Automated UI tests.
+
 Vision
 
 Build a native iOS application that transforms a Schwinn IC4 indoor bike into a virtual outdoor riding experience.

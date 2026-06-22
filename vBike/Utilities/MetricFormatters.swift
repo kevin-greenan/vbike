@@ -1,0 +1,40 @@
+import Foundation
+
+enum MetricFormatters {
+  private static let rideDateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .medium
+    formatter.timeStyle = .short
+    return formatter
+  }()
+
+  static func elapsedTime(_ interval: TimeInterval) -> String {
+    let totalSeconds = Int(interval)
+    let hours = totalSeconds / 3600
+    let minutes = (totalSeconds % 3600) / 60
+    let seconds = totalSeconds % 60
+
+    if hours > 0 {
+      return String(format: "%d:%02d:%02d", hours, minutes, seconds)
+    }
+
+    return String(format: "%02d:%02d", minutes, seconds)
+  }
+
+  static func decimal(_ value: Double, places: Int = 1) -> String {
+    String(format: "%.\(places)f", value)
+  }
+
+  static func percent(_ value: Double) -> String {
+    "\(Int((value * 100).rounded()))%"
+  }
+
+  static func optionalElapsedTime(_ interval: TimeInterval?) -> String {
+    guard let interval else { return "--:--" }
+    return elapsedTime(interval)
+  }
+
+  static func rideDate(_ date: Date) -> String {
+    rideDateFormatter.string(from: date)
+  }
+}
