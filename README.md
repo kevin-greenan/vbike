@@ -22,13 +22,19 @@ Command-line build:
 xcodebuild -project vBike.xcodeproj -scheme vBike -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' -derivedDataPath /tmp/vbike-deriveddata build
 ```
 
+Command-line tests:
+
+```bash
+xcodebuild test -project vBike.xcodeproj -scheme vBike -destination 'platform=iOS Simulator,name=iPhone 17' -derivedDataPath /tmp/vbike-deriveddata
+```
+
 Using `/tmp/vbike-deriveddata` avoids file-provider metadata issues that can affect local app signing when build products are generated inside the project directory.
 
 ## Architecture Overview
 
 - `App`: SwiftUI app entry point and root tab navigation.
 - `Models`: Core route, elevation, resistance cue, and telemetry types.
-- `Services`: Telemetry provider abstractions and mock telemetry generation.
+- `Services`: Telemetry provider abstractions, mock telemetry generation, and local ride-history storage.
 - `Bluetooth`: IC4-specific Bluetooth service placeholder with clean BLE-facing protocol boundaries.
 - `RideSession`: Ride state, controls, completion summary, and mock session orchestration.
 - `Routes`: Bundled mock routes, featured course library, route progress calculations, rider position, and ETA.
@@ -39,7 +45,7 @@ Using `/tmp/vbike-deriveddata` avoids file-provider metadata issues that can aff
 ## Current Limitations
 
 - IC4 BLE discovery and characteristic decoding are placeholders only.
-- Ride data is not persisted.
+- Ride persistence is currently limited to lightweight local summary history.
 - HealthKit is not implemented.
 - Strava and file export are not implemented.
 - Resistance is advisory only; the app does not control the bike.
@@ -48,8 +54,8 @@ Using `/tmp/vbike-deriveddata` avoids file-provider metadata issues that can aff
 
 ## Next Recommended Tasks
 
-1. Add a first unit test target for route progress and ride session state transitions.
-2. Research IC4 BLE services and document discovered characteristics.
-3. Build a real BLE scanner behind `BikeBluetoothService`.
-4. Add lightweight local ride persistence for completed mock rides.
-5. Replace mock route coordinates with a MapKit route creation flow.
+1. Research IC4 BLE services and document discovered characteristics.
+2. Build a real BLE scanner behind `BikeBluetoothService`.
+3. Add a dedicated ride history screen and clear-history debug action.
+4. Replace mock route coordinates with a MapKit route creation flow.
+5. Add UI tests for the ride controls and course switching lockout.

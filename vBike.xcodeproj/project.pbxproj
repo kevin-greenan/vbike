@@ -33,10 +33,24 @@
 		100000000000000000000118 /* RideControlBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000219 /* RideControlBar.swift */; };
 		100000000000000000000119 /* RideSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000021A /* RideSummaryView.swift */; };
 		10000000000000000000011A /* RouteProgressPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000021B /* RouteProgressPanel.swift */; };
+		10000000000000000000011B /* RideHistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000021C /* RideHistoryStore.swift */; };
+		10000000000000000000011C /* RouteProgressEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000021D /* RouteProgressEngineTests.swift */; };
+		10000000000000000000011D /* MockRideSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000021E /* MockRideSessionTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		100000000000000000000A01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 100000000000000000000801 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 100000000000000000000501;
+			remoteInfo = vBike;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		100000000000000000000001 /* vBike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vBike.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		100000000000000000000002 /* vBikeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = vBikeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		100000000000000000000201 /* vBikeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vBikeApp.swift; sourceTree = "<group>"; };
 		100000000000000000000202 /* AppTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTab.swift; sourceTree = "<group>"; };
 		100000000000000000000203 /* RideTelemetry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideTelemetry.swift; sourceTree = "<group>"; };
@@ -64,10 +78,20 @@
 		100000000000000000000219 /* RideControlBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideControlBar.swift; sourceTree = "<group>"; };
 		10000000000000000000021A /* RideSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideSummaryView.swift; sourceTree = "<group>"; };
 		10000000000000000000021B /* RouteProgressPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteProgressPanel.swift; sourceTree = "<group>"; };
+		10000000000000000000021C /* RideHistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideHistoryStore.swift; sourceTree = "<group>"; };
+		10000000000000000000021D /* RouteProgressEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteProgressEngineTests.swift; sourceTree = "<group>"; };
+		10000000000000000000021E /* MockRideSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRideSessionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		100000000000000000000301 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		100000000000000000000302 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -81,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				100000000000000000000402 /* vBike */,
+				10000000000000000000040E /* vBikeTests */,
 				100000000000000000000403 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -106,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				100000000000000000000001 /* vBike.app */,
+				100000000000000000000002 /* vBikeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -135,6 +161,7 @@
 			children = (
 				100000000000000000000205 /* TelemetryProvider.swift */,
 				100000000000000000000206 /* MockTelemetryProvider.swift */,
+				10000000000000000000021C /* RideHistoryStore.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -207,6 +234,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		10000000000000000000040E /* vBikeTests */ = {
+			isa = PBXGroup;
+			children = (
+				10000000000000000000021D /* RouteProgressEngineTests.swift */,
+				10000000000000000000021E /* MockRideSessionTests.swift */,
+			);
+			path = vBikeTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -227,6 +263,24 @@
 			productReference = 100000000000000000000001 /* vBike.app */;
 			productType = "com.apple.product-type.application";
 		};
+		100000000000000000000502 /* vBikeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 100000000000000000000603 /* Build configuration list for PBXNativeTarget "vBikeTests" */;
+			buildPhases = (
+				100000000000000000000703 /* Sources */,
+				100000000000000000000302 /* Frameworks */,
+				100000000000000000000704 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				100000000000000000000A02 /* PBXTargetDependency */,
+			);
+			name = vBikeTests;
+			productName = vBikeTests;
+			productReference = 100000000000000000000002 /* vBikeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -239,6 +293,10 @@
 				TargetAttributes = {
 					100000000000000000000501 = {
 						CreatedOnToolsVersion = 16.0;
+					};
+					100000000000000000000502 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 100000000000000000000501;
 					};
 				};
 			};
@@ -256,6 +314,7 @@
 			projectRoot = "";
 			targets = (
 				100000000000000000000501 /* vBike */,
+				100000000000000000000502 /* vBikeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -266,6 +325,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				100000000000000000000115 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		100000000000000000000704 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,10 +367,28 @@
 				100000000000000000000118 /* RideControlBar.swift in Sources */,
 				100000000000000000000119 /* RideSummaryView.swift in Sources */,
 				10000000000000000000011A /* RouteProgressPanel.swift in Sources */,
+				10000000000000000000011B /* RideHistoryStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		100000000000000000000703 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10000000000000000000011C /* RouteProgressEngineTests.swift in Sources */,
+				10000000000000000000011D /* MockRideSessionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		100000000000000000000A02 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 100000000000000000000501 /* vBike */;
+			targetProxy = 100000000000000000000A01 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		100000000000000000000901 /* Debug */ = {
@@ -476,6 +560,54 @@
 			};
 			name = Release;
 		};
+		100000000000000000000905 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevin.vBikeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/vBike.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/vBike";
+			};
+			name = Debug;
+		};
+		100000000000000000000906 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevin.vBikeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/vBike.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/vBike";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -493,6 +625,15 @@
 			buildConfigurations = (
 				100000000000000000000901 /* Debug */,
 				100000000000000000000902 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		100000000000000000000603 /* Build configuration list for PBXNativeTarget "vBikeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				100000000000000000000905 /* Debug */,
+				100000000000000000000906 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

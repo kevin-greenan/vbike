@@ -4,6 +4,7 @@ final class MockRideSession: ObservableObject {
   @Published private(set) var state: RideSessionState = .idle
   @Published private(set) var telemetry: RideTelemetry = .zero
   @Published private(set) var completedSummary: RideSummary?
+  @Published private(set) var rideHistory: [RideSummary]
   @Published var selectedRoute: CyclingRoute {
     didSet {
       if state == .idle || state == .completed {
@@ -13,15 +14,19 @@ final class MockRideSession: ObservableObject {
   }
 
   private let telemetryProvider: TelemetryProvider
+  private let rideHistoryStore: RideHistoryStore
   private let routeProgressEngine = RouteProgressEngine()
   let courseLibrary: CourseLibrary
 
   init(
     telemetryProvider: TelemetryProvider = MockTelemetryProvider(),
-    courseLibrary: CourseLibrary = .mock
+    courseLibrary: CourseLibrary = .mock,
+    rideHistoryStore: RideHistoryStore = UserDefaultsRideHistoryStore()
   ) {
     self.telemetryProvider = telemetryProvider
     self.courseLibrary = courseLibrary
+    self.rideHistoryStore = rideHistoryStore
+    rideHistory = rideHistoryStore.summaries
     selectedRoute = courseLibrary.defaultRoute
     self.telemetryProvider.onTelemetryUpdate = { [weak self] telemetry in
       self?.telemetry = telemetry
@@ -76,7 +81,7 @@ final class MockRideSession: ObservableObject {
   private func completeRide() {
     guard state != .completed else { return }
     telemetryProvider.stop()
-    completedSummary = RideSummary(
+    let summary = RideSummary(
       routeName: selectedRoute.name,
       elapsedTime: telemetry.elapsedTime,
       distance: telemetry.distance,
@@ -84,6 +89,9 @@ final class MockRideSession: ObservableObject {
       estimatedCalories: telemetry.estimatedCalories,
       completedFraction: progress.completedFraction
     )
+    rideHistoryStore.save(summary)
+    rideHistory = rideHistoryStore.summaries
+    completedSummary = summary
     state = .completed
   }
 }
