@@ -40,6 +40,9 @@
 		10000000000000000000011F /* BluetoothScanStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000220 /* BluetoothScanStatus.swift */; };
 		100000000000000000000120 /* BluetoothScannerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000221 /* BluetoothScannerState.swift */; };
 		100000000000000000000121 /* BluetoothScannerStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000222 /* BluetoothScannerStateTests.swift */; };
+		100000000000000000000122 /* KnownBike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000223 /* KnownBike.swift */; };
+		100000000000000000000123 /* KnownBikeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000224 /* KnownBikeStore.swift */; };
+		100000000000000000000124 /* KnownBikeStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000225 /* KnownBikeStoreTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +92,9 @@
 		100000000000000000000220 /* BluetoothScanStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothScanStatus.swift; sourceTree = "<group>"; };
 		100000000000000000000221 /* BluetoothScannerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothScannerState.swift; sourceTree = "<group>"; };
 		100000000000000000000222 /* BluetoothScannerStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothScannerStateTests.swift; sourceTree = "<group>"; };
+		100000000000000000000223 /* KnownBike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnownBike.swift; sourceTree = "<group>"; };
+		100000000000000000000224 /* KnownBikeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnownBikeStore.swift; sourceTree = "<group>"; };
+		100000000000000000000225 /* KnownBikeStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnownBikeStoreTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +188,8 @@
 				10000000000000000000021F /* BluetoothDiscoveredDevice.swift */,
 				100000000000000000000220 /* BluetoothScanStatus.swift */,
 				100000000000000000000221 /* BluetoothScannerState.swift */,
+				100000000000000000000223 /* KnownBike.swift */,
+				100000000000000000000224 /* KnownBikeStore.swift */,
 			);
 			path = Bluetooth;
 			sourceTree = "<group>";
@@ -251,6 +259,7 @@
 				10000000000000000000021D /* RouteProgressEngineTests.swift */,
 				10000000000000000000021E /* MockRideSessionTests.swift */,
 				100000000000000000000222 /* BluetoothScannerStateTests.swift */,
+				100000000000000000000225 /* KnownBikeStoreTests.swift */,
 			);
 			path = vBikeTests;
 			sourceTree = "<group>";
@@ -383,6 +392,8 @@
 				10000000000000000000011E /* BluetoothDiscoveredDevice.swift in Sources */,
 				10000000000000000000011F /* BluetoothScanStatus.swift in Sources */,
 				100000000000000000000120 /* BluetoothScannerState.swift in Sources */,
+				100000000000000000000122 /* KnownBike.swift in Sources */,
+				100000000000000000000123 /* KnownBikeStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +404,7 @@
 				10000000000000000000011C /* RouteProgressEngineTests.swift in Sources */,
 				10000000000000000000011D /* MockRideSessionTests.swift in Sources */,
 				100000000000000000000121 /* BluetoothScannerStateTests.swift in Sources */,
+				100000000000000000000124 /* KnownBikeStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

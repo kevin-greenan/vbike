@@ -11,6 +11,7 @@ struct SettingsDebugView: View {
         LabeledContent("Scanner", value: bluetoothService.scanStatus.displayText)
         LabeledContent("Target hardware", value: "Schwinn IC4")
         LabeledContent("Telemetry source", value: "Mock")
+        LabeledContent("Known bike", value: bluetoothService.knownBike?.name ?? "None")
 
         HStack {
           Button {
@@ -28,6 +29,24 @@ struct SettingsDebugView: View {
             Label("Stop", systemImage: "stop.fill")
           }
           .disabled(bluetoothService.scanStatus != .scanning)
+        }
+
+        if bluetoothService.knownBike != nil {
+          HStack {
+            Button {
+              bluetoothService.autoReconnect()
+            } label: {
+              Label("Reconnect", systemImage: "arrow.clockwise")
+            }
+
+            Spacer()
+
+            Button(role: .destructive) {
+              bluetoothService.forgetKnownBike()
+            } label: {
+              Label("Forget", systemImage: "trash")
+            }
+          }
         }
       }
 

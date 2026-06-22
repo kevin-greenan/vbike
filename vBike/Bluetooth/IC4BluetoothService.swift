@@ -5,25 +5,33 @@ protocol BikeBluetoothService: AnyObject {
   var connectionState: BikeConnectionState { get }
   var scanStatus: BluetoothScanStatus { get }
   var discoveredDevices: [BluetoothDiscoveredDevice] { get }
+  var knownBike: KnownBike? { get }
   var telemetryProvider: TelemetryProvider? { get }
 
   func startScanning()
   func stopScanning()
+  func autoReconnect()
   func connect(to device: BluetoothDiscoveredDevice)
+  func forgetKnownBike()
   func disconnect()
 }
 
 final class IC4BluetoothService: NSObject, BikeBluetoothService, ObservableObject {
   private var centralManager: CBCentralManager?
   private var peripheralIDsByDeviceID: [UUID: CBPeripheral] = [:]
+  private var pendingKnownBikeConnection: KnownBike?
   private var scannerState = BluetoothScannerState()
+  private let knownBikeStore: KnownBikeStore
 
   @Published private(set) var connectionState: BikeConnectionState = .disconnected
   @Published private(set) var scanStatus: BluetoothScanStatus = .idle
   @Published private(set) var discoveredDevices: [BluetoothDiscoveredDevice] = []
+  @Published private(set) var knownBike: KnownBike?
   private(set) var telemetryProvider: TelemetryProvider?
 
-  override init() {
+  init(knownBikeStore: KnownBikeStore = UserDefaultsKnownBikeStore()) {
+    self.knownBikeStore = knownBikeStore
+    knownBike = knownBikeStore.knownBike
     super.init()
     centralManager = CBCentralManager(delegate: self, queue: .main)
     applyScannerState { $0.startWaitingForBluetooth() }
@@ -69,6 +77,37 @@ final class IC4BluetoothService: NSObject, BikeBluetoothService, ObservableObjec
     }
   }
 
+  func autoReconnect() {
+    guard let knownBike else {
+      connectionState = .failed(message: "No known bike saved.")
+      return
+    }
+
+    guard let centralManager else {
+      connectionState = .failed(message: "Bluetooth manager unavailable.")
+      return
+    }
+
+    switch centralManager.state {
+    case .poweredOn:
+      connectToKnownBike(knownBike, centralManager: centralManager)
+    case .poweredOff:
+      connectionState = .failed(message: "Bluetooth is powered off.")
+      applyScannerState { $0.markPoweredOff() }
+    case .unauthorized:
+      connectionState = .failed(message: "Bluetooth permission is not authorized.")
+      applyScannerState { $0.markUnauthorized() }
+    case .unsupported:
+      connectionState = .failed(message: "Bluetooth is not supported on this device.")
+      applyScannerState { $0.markUnsupported() }
+    case .resetting, .unknown:
+      pendingKnownBikeConnection = knownBike
+      applyScannerState { $0.startWaitingForBluetooth() }
+    @unknown default:
+      connectionState = .failed(message: "Unknown Bluetooth state.")
+    }
+  }
+
   func connect(to device: BluetoothDiscoveredDevice) {
     guard let peripheral = peripheralIDsByDeviceID[device.id] else {
       connectionState = .failed(message: "Selected bike is no longer available.")
@@ -80,6 +119,12 @@ final class IC4BluetoothService: NSObject, BikeBluetoothService, ObservableObjec
     centralManager?.connect(peripheral)
   }
 
+  func forgetKnownBike() {
+    knownBikeStore.clear()
+    knownBike = nil
+    pendingKnownBikeConnection = nil
+  }
+
   func disconnect() {
     if case .scanning = connectionState {
       stopScanning()
@@ -87,6 +132,25 @@ final class IC4BluetoothService: NSObject, BikeBluetoothService, ObservableObjec
 
     connectionState = .disconnected
     telemetryProvider?.stop()
+  }
+
+  private func saveKnownBike(id: UUID, name: String) {
+    let knownBike = KnownBike(id: id, name: name)
+    knownBikeStore.save(knownBike)
+    self.knownBike = knownBike
+  }
+
+  private func connectToKnownBike(_ knownBike: KnownBike, centralManager: CBCentralManager) {
+    let peripherals = centralManager.retrievePeripherals(withIdentifiers: [knownBike.id])
+    guard let peripheral = peripherals.first else {
+      connectionState = .failed(message: "Known bike was not found. Try scanning again.")
+      return
+    }
+
+    peripheralIDsByDeviceID[knownBike.id] = peripheral
+    stopScanning()
+    connectionState = .connecting(name: knownBike.name)
+    centralManager.connect(peripheral)
   }
 
   private func applyScannerState(_ update: (inout BluetoothScannerState) -> Void) {
@@ -133,6 +197,10 @@ extension IC4BluetoothService: CBCentralManagerDelegate {
       if scanStatus == .waitingForBluetooth {
         applyScannerState { $0.stopScanning() }
       }
+      if let pendingKnownBikeConnection {
+        self.pendingKnownBikeConnection = nil
+        connectToKnownBike(pendingKnownBikeConnection, centralManager: central)
+      }
     case .poweredOff:
       applyScannerState { $0.markPoweredOff() }
       connectionState = .failed(message: "Bluetooth is powered off.")
@@ -160,6 +228,7 @@ extension IC4BluetoothService: CBCentralManagerDelegate {
 
   func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
     let name = peripheral.name ?? "Schwinn IC4"
+    saveKnownBike(id: peripheral.identifier, name: name)
     connectionState = .connected(name: name)
     // Future work: discover IC4 services and subscribe to cycling telemetry characteristics.
   }
