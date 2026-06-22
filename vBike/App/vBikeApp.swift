@@ -2,13 +2,13 @@ import SwiftUI
 
 @main
 struct vBikeApp: App {
-    @StateObject private var rideSession = MockRideSession()
+  @StateObject private var rideSession = MockRideSession()
 
-    var body: some Scene {
-        WindowGroup {
-            RootView()
-                .environmentObject(rideSession)
-                .preferredColorScheme(.dark)
-        }
+  var body: some Scene {
+    WindowGroup {
+      RootView()
+        .environmentObject(rideSession)
+        .preferredColorScheme(.dark)
     }
+  }
 }

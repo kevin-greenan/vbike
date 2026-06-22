@@ -28,6 +28,11 @@
 		100000000000000000000113 /* RouteMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000213 /* RouteMapView.swift */; };
 		100000000000000000000114 /* SettingsDebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000214 /* SettingsDebugView.swift */; };
 		100000000000000000000115 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000215 /* Assets.xcassets */; };
+		100000000000000000000116 /* RideSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000217 /* RideSummary.swift */; };
+		100000000000000000000117 /* CourseLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000218 /* CourseLibrary.swift */; };
+		100000000000000000000118 /* RideControlBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000219 /* RideControlBar.swift */; };
+		100000000000000000000119 /* RideSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000021A /* RideSummaryView.swift */; };
+		10000000000000000000011A /* RouteProgressPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000021B /* RouteProgressPanel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +59,11 @@
 		100000000000000000000214 /* SettingsDebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDebugView.swift; sourceTree = "<group>"; };
 		100000000000000000000215 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		100000000000000000000216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		100000000000000000000217 /* RideSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideSummary.swift; sourceTree = "<group>"; };
+		100000000000000000000218 /* CourseLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseLibrary.swift; sourceTree = "<group>"; };
+		100000000000000000000219 /* RideControlBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideControlBar.swift; sourceTree = "<group>"; };
+		10000000000000000000021A /* RideSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideSummaryView.swift; sourceTree = "<group>"; };
+		10000000000000000000021B /* RouteProgressPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteProgressPanel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +124,8 @@
 			children = (
 				100000000000000000000203 /* RideTelemetry.swift */,
 				100000000000000000000204 /* CyclingRoute.swift */,
+				100000000000000000000217 /* RideSummary.swift */,
+				100000000000000000000218 /* CourseLibrary.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -171,6 +183,9 @@
 			children = (
 				10000000000000000000020D /* MetricTile.swift */,
 				10000000000000000000020E /* ResistanceCueView.swift */,
+				100000000000000000000219 /* RideControlBar.swift */,
+				10000000000000000000021A /* RideSummaryView.swift */,
+				10000000000000000000021B /* RouteProgressPanel.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -281,6 +296,11 @@
 				100000000000000000000112 /* CourseSelectionView.swift in Sources */,
 				100000000000000000000113 /* RouteMapView.swift in Sources */,
 				100000000000000000000114 /* SettingsDebugView.swift in Sources */,
+				100000000000000000000116 /* RideSummary.swift in Sources */,
+				100000000000000000000117 /* CourseLibrary.swift in Sources */,
+				100000000000000000000118 /* RideControlBar.swift in Sources */,
+				100000000000000000000119 /* RideSummaryView.swift in Sources */,
+				10000000000000000000011A /* RouteProgressPanel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
