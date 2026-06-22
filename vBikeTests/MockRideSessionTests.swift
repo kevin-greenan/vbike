@@ -53,6 +53,38 @@ final class MockRideSessionTests: XCTestCase {
 
     XCTAssertEqual(session.selectedRoute.id, originalRoute.id)
   }
+
+  func testClearRideHistoryRemovesStoredSummaries() {
+    let telemetryProvider = TestTelemetryProvider()
+    let historyStore = InMemoryRideHistoryStore()
+    let session = MockRideSession(
+      telemetryProvider: telemetryProvider,
+      rideHistoryStore: historyStore
+    )
+
+    session.start()
+    telemetryProvider.emit(
+      RideTelemetry(
+        currentPower: 160,
+        averagePower: 150,
+        cadence: 82,
+        speed: 17,
+        elapsedTime: 90,
+        distance: 0.7,
+        targetResistance: 32,
+        estimatedCalories: 12
+      )
+    )
+    session.stop()
+
+    XCTAssertEqual(session.rideHistory.count, 1)
+
+    session.clearRideHistory()
+
+    XCTAssertTrue(session.rideHistory.isEmpty)
+    XCTAssertTrue(historyStore.summaries.isEmpty)
+    XCTAssertNil(session.completedSummary)
+  }
 }
 
 private final class TestTelemetryProvider: TelemetryProvider {

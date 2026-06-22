@@ -78,6 +78,12 @@ final class MockRideSession: ObservableObject {
     selectedRoute = route
   }
 
+  func clearRideHistory() {
+    rideHistoryStore.clear()
+    rideHistory = []
+    completedSummary = nil
+  }
+
   private func completeRide() {
     guard state != .completed else { return }
     telemetryProvider.stop()

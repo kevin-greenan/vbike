@@ -1,6 +1,13 @@
 import Foundation
 
 enum MetricFormatters {
+  private static let rideDateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .medium
+    formatter.timeStyle = .short
+    return formatter
+  }()
+
   static func elapsedTime(_ interval: TimeInterval) -> String {
     let totalSeconds = Int(interval)
     let hours = totalSeconds / 3600
@@ -25,5 +32,9 @@ enum MetricFormatters {
   static func optionalElapsedTime(_ interval: TimeInterval?) -> String {
     guard let interval else { return "--:--" }
     return elapsedTime(interval)
+  }
+
+  static func rideDate(_ date: Date) -> String {
+    rideDateFormatter.string(from: date)
   }
 }

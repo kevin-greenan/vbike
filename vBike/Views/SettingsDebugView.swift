@@ -99,25 +99,6 @@ struct SettingsDebugView: View {
         LabeledContent("Saved rides", value: "\(rideSession.rideHistory.count)")
       }
 
-      if !rideSession.rideHistory.isEmpty {
-        Section("Recent Rides") {
-          ForEach(rideSession.rideHistory.prefix(5)) { summary in
-            VStack(alignment: .leading, spacing: 6) {
-              Text(summary.routeName)
-                .font(.headline)
-              HStack {
-                Text(MetricFormatters.elapsedTime(summary.elapsedTime))
-                Text("\(MetricFormatters.decimal(summary.distance)) mi")
-                Text("\(summary.averagePower) W avg")
-              }
-              .font(.caption)
-              .foregroundStyle(.secondary)
-            }
-            .padding(.vertical, 4)
-          }
-        }
-      }
-
       Section("Future Services") {
         Label("BLE decoding pending", systemImage: "antenna.radiowaves.left.and.right")
         Label("HealthKit intentionally deferred", systemImage: "heart.text.square")

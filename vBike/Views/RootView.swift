@@ -22,6 +22,14 @@ struct RootView: View {
       .tag(AppTab.courses)
 
       NavigationStack {
+        RideHistoryView()
+      }
+      .tabItem {
+        Label("History", systemImage: "clock.arrow.circlepath")
+      }
+      .tag(AppTab.history)
+
+      NavigationStack {
         SettingsDebugView()
       }
       .tabItem {

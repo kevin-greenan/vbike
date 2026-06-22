@@ -12,6 +12,7 @@ Completed initial app setup:
 * Added a mock ride dashboard with current power, average power, cadence, speed, elapsed time, distance, target resistance, and estimated calories.
 * Added a mock ride session that updates fake telemetry over time.
 * Added workout start, pause, resume, stop, and completed-summary UI states for mock rides.
+* Added a dedicated History tab for completed ride summaries with local clear-history support.
 * Added a placeholder IC4 Bluetooth service/protocol for future BLE integration.
 * Added mock route models with coordinates, elevation samples, and resistance cues.
 * Added route progress calculation with rider position, remaining distance, completion percentage, and ETA.
